@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header .logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+header .search-bar input {
+    padding: 10px;
+    font-size: 14px;
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Hero Section Styles */
+.hero {
+    background-color: #fff;
+    padding: 40px 0;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero .hero-banner img {
+    width: 60%;
+    border-radius: 10px;
+}
+
+.hero .hero-text {
+    width: 35%;
+}
+
+.hero .hero-text h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero .featured-books {
+    display: flex;
+    gap: 15px;
+}
+
+.hero .book {
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    width: 100px;
+}
+
+/* Categories Section Styles */
+.categories {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+}
+
+.categories .container {
+    text-align: center;
+}
+
+.categories h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.categories-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.categories-list button {
+    background-color: #333;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.categories-list button:hover {
+    background-color: #555;
+}
+
+/* Recommendations Section Styles */
+.recommendations {
+    background-color: #fff;
+    padding: 40px 0;
+}
+
+.recommendations .container {
+    text-align: center;
+}
+
+.recommendations h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.recommendation-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.book-card {
+    background-color: #e0e0e0;
+    padding: 20px;
+    width: 180px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+footer .social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer .footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
