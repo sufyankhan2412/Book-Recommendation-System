@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Search Tools</title>
+    <link rel="stylesheet" href="home_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1 class="logo">READIFY</h1>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+        <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fas fa-globe"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fas fa-shopping-bag"></i>
+        </div>
+    </nav>
+    
+    <!-- Hero Slider -->
+    <div class="hero-slider">
+        <!-- Hero Slide 1 -->
+        <div class="hero-slide active">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="subheading">Extensive Cataloging System</p>
+                <h2>Online Search Tools for Librarians</h2>
+                <button class="cta-button">Read More →</button>
+            </div>
+            <img src="img1.jpg" alt="Hero Image 1" class="hero-image">
+        </div>
+
+        <!-- Hero Slide 2 -->
+        <div class="hero-slide">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="subheading">Advanced Search Features</p>
+                <h2>Find Books Faster and Easier</h2>
+                <button class="cta-button">Explore Now →</button>
+            </div>
+            <img src="img2.jpg" alt="Hero Image 2" class="hero-image2">
+        </div>
+
+        <!-- Hero Slide 3 -->
+        <div class="hero-slide">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="subheading">Personalized Recommendations</p>
+                <h2>Discover Your Next Favorite Book</h2>
+                <button class="cta-button">Get Started →</button>
+            </div>
+            <img src="img3.jpg" alt="Hero Image 3" class="hero-image3">
+        </div>
+
+        <!-- Slider Buttons -->
+        <button class="slider-btn left-btn">&#10094;</button>
+        <button class="slider-btn right-btn">&#10095;</button>
+    </div>
+
+    <!-- JavaScript for Slider Functionality -->
+    <script>
+        const slides = document.querySelectorAll('.hero-slide');
+        const leftBtn = document.querySelector('.left-btn');
+        const rightBtn = document.querySelector('.right-btn');
+        let currentSlide = 0;
+
+        // Function to show the current slide
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        // Next Slide
+        rightBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Previous Slide
+        leftBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
