@@ -1,0 +1,111 @@
+@keyframes animar_fondo {
+    from { transform: scale(1) translate(0px); }
+    to { transform: scale(1.5) translate(50px); }
+  }
+  
+  .cotn_principal {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #cfd8dc 0%, #607d8b 100%, #b0bec5 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cont_centrar {
+    width: 100%;
+    max-width: 640px;
+  }
+  
+  .cont_login {
+    position: relative;
+    width: 100%;
+    height: 420px;
+  }
+  
+  .cont_back_info {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 1px 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .cont_forms {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    box-shadow: 1px 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .cont_img_back_grey,
+  .cont_img_back_ {
+    position: absolute;
+    width: 950px;
+    top: -80px;
+    left: -116px;
+  }
+  
+  .cont_img_back_grey img,
+  .cont_img_back_ img {
+    width: 100%;
+    opacity: 0.3;
+    animation: animar_fondo 20s linear infinite alternate;
+  }
+  
+  .cont_img_back_grey img {
+    filter: grayscale(100%);
+  }
+  
+  .cont_form_sign_up {
+    position: relative;
+    width: 100%;
+    padding: 40px;
+    z-index: 2;
+  }
+  
+  .cont_form_sign_up h2 {
+    font-weight: 400;
+    color: #757575;
+    margin-bottom: 30px;
+  }
+  
+  .cont_form_sign_up input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+  }
+  
+  .btn_sign_up {
+    background-color: #ef5350;
+    border: none;
+    padding: 12px 30px;
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: 1px 5px 20px -5px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    .cont_centrar {
+      padding: 20px;
+    }
+    
+    .cont_form_sign_up {
+      padding: 20px;
+    }
+    
+    .cont_img_back_grey,
+    .cont_img_back_ {
+      left: -200px;
+    }
+  }
