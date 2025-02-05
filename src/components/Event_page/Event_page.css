@@ -1,0 +1,143 @@
+/* Global Styles */
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Banner Section */
+.banner {
+    width: 100%;
+    height: 250px;
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIDqCkGt2Zg2vwvJihPlsNm_7OZVU4F1sAYw&s") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.banner h1 {
+    color: white;
+    font-size: 42px;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-box {
+    width: 50%;
+    padding: 12px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-box:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
+}
+
+.search-btn {
+    background-color: #2563eb;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0 5px 5px 0;
+    
+}
+
+.search-btn:hover {
+    background-color: #1e40af;
+}
+
+/* Event Card */
+.event-container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.event-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    background: #f8fafc;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.event-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.event-date {
+    background: #2563eb;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 60px;
+}
+
+.event-info {
+    flex-grow: 1;
+    padding: 0 15px;
+}
+
+.event-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1f2937;
+    transition: color 0.3s;
+}
+
+.event-title:hover {
+    color: #2563eb;
+}
+
+.event-location,
+.event-time,
+.event-price {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.event-price {
+    font-weight: bold;
+    color: #16a34a;
+}
+
+.event-image {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
