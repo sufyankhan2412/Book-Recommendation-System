@@ -1,10 +1,10 @@
 import React from "react";
-import HomePage from "./home_page"; // Ensure this matches the actual file name
-
+import 'font-awesome/css/font-awesome.min.css';
+import HomePage from "./components/home_page/home_page";
 function App() {
   return (
     <div>
-      <HomePage />
+      <HomePage/> {/* Use the component with an uppercase letter */}
     </div>
   );
 }
