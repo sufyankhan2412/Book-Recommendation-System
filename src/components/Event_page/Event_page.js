@@ -1,106 +1,61 @@
-import React, { useState } from "react";
-import "./Event_page.css"; // Import styles
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Event_page.css";
 
-const eventsData = [
-    
+const events = [
   {
-    id: 1,
-    title: "Top Writing Jobs Today",
-    date: "Jul 1, 2025",
-    time: "9:00 AM - 5:00 PM",
-    location: "Manhattan Club, New York, NY, USA",
-    price: "$420",
-    image: "https://via.placeholder.com/150",
+    title: "Tech Seminar",
+    date: "Feb 20, 2025",
+    location: "Auditorium Hall",
   },
   {
-    id: 2,
-    title: "Writers' Guide 2025",
-    date: "Aug 1, 2025",
-    time: "9:00 AM - 6:00 PM",
-    location: "Manhattan Club, New York, NY, USA",
-    price: "$300",
-    image: "https://via.placeholder.com/150",
+    title: "Cultural Fest",
+    date: "March 5, 2025",
+    location: "Open Grounds",
   },
   {
-    id: 3,
-    title: "Writing Masterclass",
-    date: "Nov 1, 2025",
-    time: "10:00 AM - 4:00 PM",
-    location: "Manhattan Club, New York, NY, USA",
-    price: "$400",
-    image: "https://via.placeholder.com/150",
+    title: "Sports Meet",
+    date: "April 12, 2025",
+    location: "Main Stadium",
   },
 ];
 
 const EventsPage = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const filteredEvents = eventsData.filter((event) =>
-    event.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
   return (
-    <div className="bg-gray-50 min-h-screen flex flex-col items-center">
-      {/* Banner Section */}
-      <div className="relative w-full h-64">
-        <img
-          src="https://via.placeholder.com/1920x400" // Replace with a real banner image URL
-          alt="Upcoming Events"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <h1 className="text-white text-5xl font-extrabold">📅 Upcoming Events</h1>
+    <div className="bg-gray-100 min-h-screen">
+      {/* Navbar */}
+      <nav className="bg-blue-600 p-4 text-white shadow-md">
+        <div className="container mx-auto flex justify-between items-center">
+          <h1 className="text-2xl font-bold">College Events</h1>
+          <ul className="flex space-x-6">
+            <li><Link to="/" className="hover:underline">Home</Link></li>
+            <li><Link to="/events" className="hover:underline">Events</Link></li>
+            <li><Link to="/contact" className="hover:underline">Contact</Link></li>
+          </ul>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <div className="container mx-auto p-6">
+        <h2 className="text-3xl font-bold text-center mb-6 text-blue-700">Upcoming Events</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {events.map((event, index) => (
+            <div key={index} className="event-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold">{event.title}</h3>
+              <p className="text-gray-600"> {event.date}</p>
+              <p className="text-gray-600"> {event.location}</p>
+              <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+                Learn More
+              </button>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Search Bar */}
-      <div className="flex justify-center py-6">
-        <input
-          type="text"
-          placeholder="Search for events..."
-          className="w-80 px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <button className="bg-blue-600 px-6 py-2 text-white font-bold rounded-r-md hover:bg-blue-700 transition">
-          Search
-        </button>
-      </div>
-
-      {/* Event List */}
-      <div className="bg-white shadow-lg rounded-lg p-6 w-3/4">
-        {filteredEvents.length > 0 ? (
-          filteredEvents.map((event) => (
-            <div
-              key={event.id}
-              className="flex items-center border-b pb-4 mb-4 bg-gray-100 rounded-md shadow-md p-4"
-            >
-              {/* Date Box */}
-              <div className="w-16 h-16 bg-blue-600 text-white flex flex-col items-center justify-center text-lg font-bold rounded-md shadow">
-                <span>{event.date.split(" ")[1]}</span>
-                <span className="text-xl">{event.date.split(" ")[0]}</span>
-              </div>
-              
-              {/* Event Details */}
-              <div className="flex-1 ml-6">
-                <h2 className="text-2xl font-bold text-gray-900">{event.title}</h2>
-                <p className="text-gray-600 text-sm">{event.location}</p>
-                <p className="text-gray-500 text-xs">{event.time}</p>
-                <p className="text-green-600 font-bold text-lg">{event.price}</p>
-              </div>
-              
-              {/* Event Image */}
-              <img
-                src={event.image}
-                alt={event.title}
-                className="w-20 h-20 object-cover rounded-lg shadow"
-              />
-            </div>
-          ))
-        ) : (
-          <p className="text-center text-gray-500 py-6">No events found.</p>
-        )}
-      </div>
+      {/* Footer */}
+      <footer className="bg-blue-600 text-white text-center p-4 mt-6">
+        &copy; {new Date().getFullYear()} College Alert System. All rights reserved.
+      </footer>
     </div>
   );
 };
