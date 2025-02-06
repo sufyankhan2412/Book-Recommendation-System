@@ -1,98 +1,93 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import "./Cart.css";
 
 const Cart = () => {
-  // Initialize cart items in state
   const [cartItems, setCartItems] = useState([
-    { id: 1, name: "Book 1", price: 12.99, quantity: 1 },
-    { id: 2, name: "Book 2", price: 19.99, quantity: 2 },
+    { id: 1, name: "Product 1", price: 25, quantity: 1 },
+    { id: 2, name: "Product 2", price: 40, quantity: 1 },
   ]);
 
-  // Handle remove item action
-  const handleRemove = (id) => {
-    const updatedCart = cartItems.filter((item) => item.id !== id);
-    setCartItems(updatedCart);
+  const updateQuantity = (id, amount) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: Math.max(1, item.quantity + amount) } : item
+      )
+    );
   };
 
-  // Handle checkout action (for now, just log to console)
-  const handleCheckout = () => {
-    if (cartItems.length === 0) {
-      alert("Your cart is empty!");
-    } else {
-      console.log("Proceeding to checkout with items: ", cartItems);
-      // You could integrate checkout API here
-    }
+  const removeItem = (id) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
-  // Handle quantity change
-  const handleQuantityChange = (id, operation) => {
-    const updatedCart = cartItems.map((item) => {
-      if (item.id === id) {
-        if (operation === "increase") {
-          return { ...item, quantity: item.quantity + 1 };
-        } else if (operation === "decrease" && item.quantity > 1) {
-          return { ...item, quantity: item.quantity - 1 };
-        }
-      }
-      return item;
-    });
-    setCartItems(updatedCart);
-  };
-
-  // Calculate the total cost of items
-  const total = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
+  const totalAmount = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <div className="cart-container">
-      <h2 className="cart-title">Your Cart</h2>
-
-      <div className="cart-items">
-        {cartItems.map((item) => (
-          <div className="cart-item" key={item.id}>
-            <div className="item-info">
-              <span className="item-name">{item.name}</span>
-              <span className="item-price">${item.price.toFixed(2)}</span>
-            </div>
-
-            <div className="item-quantity">
-              <button
-                className="quantity-btn"
-                onClick={() => handleQuantityChange(item.id, "decrease")}
+    <motion.div
+      className="cart-container"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h2>Shopping Cart</h2>
+      {cartItems.length === 0 ? (
+        <motion.p className="empty-cart">Your cart is empty.</motion.p>
+      ) : (
+        cartItems.map((item) => (
+          <motion.div
+            key={item.id}
+            className="cart-item"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            <span>{item.name}</span>
+            <div className="cart-controls">
+              <motion.button
+                whileTap={{ scale: 0.9 }}
+                onClick={() => updateQuantity(item.id, -1)}
               >
-                -
-              </button>
+                ➖
+              </motion.button>
               <span>{item.quantity}</span>
-              <button
-                className="quantity-btn"
-                onClick={() => handleQuantityChange(item.id, "increase")}
+              <motion.button
+                whileTap={{ scale: 0.9 }}
+                onClick={() => updateQuantity(item.id, 1)}
               >
-                +
-              </button>
+                ➕
+              </motion.button>
             </div>
-
-            <button className="remove-btn" onClick={() => handleRemove(item.id)}>
-              Remove
-            </button>
-          </div>
-        ))}
-      </div>
-
-      <div className="cart-summary">
-        <h3 className="summary-title">Cart Summary</h3>
-        <div className="total">
-          <span>Total:</span>
-          <span>${total.toFixed(2)}</span>
-        </div>
-
-        <button className="checkout-btn" onClick={handleCheckout}>
-          Checkout
-        </button>
-      </div>
-    </div>
+            <span>${item.price * item.quantity}</span>
+            <motion.button
+              className="remove-btn"
+              whileTap={{ scale: 0.8 }}
+              onClick={() => removeItem(item.id)}
+            >
+              ❌
+            </motion.button>
+          </motion.div>
+        ))
+      )}
+      {cartItems.length > 0 && (
+        <motion.div
+          className="cart-summary"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h3>Total: ${totalAmount}</h3>
+          <motion.button
+            className="checkout-btn"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Proceed to Checkout
+          </motion.button>
+        </motion.div>
+      )}
+    </motion.div>
   );
 };
 
 export default Cart;
+
