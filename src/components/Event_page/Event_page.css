@@ -375,29 +375,56 @@ body {
 
 .footer-section.closing-details .icons a:hover {
     color: #4CAF50;
+} /* <-- Added closing bracket here */
+
+/* Event Section */
+.event-container {
+    padding: 40px 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Style for Scroll to Top Button */
-#scrollToTopBtn {
-    display: none; /* Initially hidden */
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 1000;
-  }
-  
-  #scrollToTopBtn.show {
-    display: block; /* Show button when scrolling down */
-  }
-  
-  #scrollToTopBtn:hover {
-    background-color: #555;
-  }
-  
+.event-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.event-item:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.event-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.event-item h4 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.event-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+.event-item .event-link {
+    font-size: 1.2em;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.event-item .event-link:hover {
+    text-decoration: underline;
+}
