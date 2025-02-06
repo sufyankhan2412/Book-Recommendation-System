@@ -1,0 +1,48 @@
+.payment-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .payment-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .step {
+    flex: 1;
+    padding: 10px;
+    border-bottom: 3px solid lightgray;
+  }
+  
+  .step.active {
+    border-bottom: 3px solid #007bff;
+    font-weight: bold;
+  }
+  
+  .payment-methods button, 
+  .payment-details button, 
+  .review-payment button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .payment-methods button:hover, 
+  .payment-details button:hover, 
+  .review-payment button:hover {
+    background: #007bff;
+    color: white;
+  }
+  
+  .confirm-btn {
+    background: green;
+    color: white;
+  }
+  

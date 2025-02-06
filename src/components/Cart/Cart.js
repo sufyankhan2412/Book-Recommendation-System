@@ -1,97 +1,57 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import "./Cart.css";
 
 const Cart = () => {
-  // Initialize cart items in state
   const [cartItems, setCartItems] = useState([
-    { id: 1, name: "Book 1", price: 12.99, quantity: 1 },
-    { id: 2, name: "Book 2", price: 19.99, quantity: 2 },
+    { id: 1, name: "Book 1", price: 15, quantity: 1 },
+    { id: 2, name: "Book 2", price: 20, quantity: 1 },
   ]);
+  const [paymentMethod, setPaymentMethod] = useState("");
 
-  // Handle remove item action
-  const handleRemove = (id) => {
-    const updatedCart = cartItems.filter((item) => item.id !== id);
-    setCartItems(updatedCart);
+  const updateQuantity = (id, amount) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: Math.max(1, item.quantity + amount) } : item
+      )
+    );
   };
 
-  // Handle checkout action (for now, just log to console)
-  const handleCheckout = () => {
-    if (cartItems.length === 0) {
-      alert("Your cart is empty!");
-    } else {
-      console.log("Proceeding to checkout with items: ", cartItems);
-      // You could integrate checkout API here
-    }
+  const removeItem = (id) => {
+    setCartItems(cartItems.filter((item) => item.id !== id));
   };
 
-  // Handle quantity change
-  const handleQuantityChange = (id, operation) => {
-    const updatedCart = cartItems.map((item) => {
-      if (item.id === id) {
-        if (operation === "increase") {
-          return { ...item, quantity: item.quantity + 1 };
-        } else if (operation === "decrease" && item.quantity > 1) {
-          return { ...item, quantity: item.quantity - 1 };
-        }
-      }
-      return item;
-    });
-    setCartItems(updatedCart);
-  };
-
-  // Calculate the total cost of items
-  const total = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
+  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
-    <div className="cart-container">
-      <h2 className="cart-title">Your Cart</h2>
-
+    <motion.div className="cart-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+      <h2 className="cart-title">Shopping Cart</h2>
       <div className="cart-items">
         {cartItems.map((item) => (
-          <div className="cart-item" key={item.id}>
-            <div className="item-info">
-              <span className="item-name">{item.name}</span>
-              <span className="item-price">${item.price.toFixed(2)}</span>
-            </div>
-
-            <div className="item-quantity">
-              <button
-                className="quantity-btn"
-                onClick={() => handleQuantityChange(item.id, "decrease")}
-              >
-                -
-              </button>
+          <motion.div className="cart-item" key={item.id} whileHover={{ scale: 1.05 }}>
+            <span>{item.name}</span>
+            <span>${item.price}</span>
+            <div className="quantity-controls">
+              <button onClick={() => updateQuantity(item.id, -1)}>-</button>
               <span>{item.quantity}</span>
-              <button
-                className="quantity-btn"
-                onClick={() => handleQuantityChange(item.id, "increase")}
-              >
-                +
-              </button>
+              <button onClick={() => updateQuantity(item.id, 1)}>+</button>
             </div>
-
-            <button className="remove-btn" onClick={() => handleRemove(item.id)}>
-              Remove
-            </button>
-          </div>
+            <button className="remove-btn" onClick={() => removeItem(item.id)}>Remove</button>
+          </motion.div>
         ))}
       </div>
-
-      <div className="cart-summary">
-        <h3 className="summary-title">Cart Summary</h3>
-        <div className="total">
-          <span>Total:</span>
-          <span>${total.toFixed(2)}</span>
-        </div>
-
-        <button className="checkout-btn" onClick={handleCheckout}>
-          Checkout
-        </button>
+      <h3>Total: ${totalPrice}</h3>
+      <div className="payment-section">
+        <h4>Select Payment Method</h4>
+        <select onChange={(e) => setPaymentMethod(e.target.value)}>
+          <option value="">Choose...</option>
+          <option value="credit-card">Credit Card</option>
+          <option value="paypal">PayPal</option>
+          <option value="bank-transfer">Bank Transfer</option>
+        </select>
       </div>
-    </div>
+      <motion.button className="checkout-btn" whileTap={{ scale: 0.9 }}>Proceed to Payment</motion.button>
+    </motion.div>
   );
 };
 
