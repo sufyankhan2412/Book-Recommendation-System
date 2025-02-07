@@ -141,3 +141,27 @@
     gap: 10px;
   }
 }
+
+@media (max-width: 768px) {
+  .cart-container {
+    padding: 15px;
+  }
+
+  .cart-title {
+    font-size: 1.5rem;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .checkout-btn {
+    width: 100%;
+  }
+
+  .payment-container {
+    padding: 15px;
+  }
+}
+

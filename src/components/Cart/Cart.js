@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useHistory } from "react-router-dom"; // For navigation
 import "./Cart.css";
 
 const Cart = () => {
@@ -8,6 +9,7 @@ const Cart = () => {
     { id: 2, name: "Book 2", price: 20, quantity: 1 },
   ]);
   const [paymentMethod, setPaymentMethod] = useState("");
+  const history = useHistory(); // Hook to navigate
 
   const updateQuantity = (id, amount) => {
     setCartItems((prevItems) =>
@@ -23,8 +25,29 @@ const Cart = () => {
 
   const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
+  const handleProceedToPayment = () => {
+    if (!paymentMethod) {
+      alert("Please select a payment method.");
+      return;
+    }
+
+    // Navigate based on selected payment method
+    if (paymentMethod === "credit-card") {
+      history.push("/payment/credit-card");
+    } else if (paymentMethod === "paypal") {
+      history.push("/payment/paypal");
+    } else if (paymentMethod === "bank-transfer") {
+      history.push("/payment/bank-transfer");
+    }
+  };
+
   return (
-    <motion.div className="cart-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+    <motion.div
+      className="cart-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <h2 className="cart-title">Shopping Cart</h2>
       <div className="cart-items">
         {cartItems.map((item) => (
@@ -36,7 +59,9 @@ const Cart = () => {
               <span>{item.quantity}</span>
               <button onClick={() => updateQuantity(item.id, 1)}>+</button>
             </div>
-            <button className="remove-btn" onClick={() => removeItem(item.id)}>Remove</button>
+            <button className="remove-btn" onClick={() => removeItem(item.id)}>
+              Remove
+            </button>
           </motion.div>
         ))}
       </div>
@@ -50,7 +75,13 @@ const Cart = () => {
           <option value="bank-transfer">Bank Transfer</option>
         </select>
       </div>
-      <motion.button className="checkout-btn" whileTap={{ scale: 0.9 }}>Proceed to Payment</motion.button>
+      <motion.button
+        className="checkout-btn"
+        whileTap={{ scale: 0.9 }}
+        onClick={handleProceedToPayment}
+      >
+        Proceed to Payment
+      </motion.button>
     </motion.div>
   );
 };
