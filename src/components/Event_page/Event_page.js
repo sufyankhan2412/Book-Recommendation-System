@@ -7,7 +7,7 @@ const HomePage = () => {
   const eventsData = [
     {
       id: 1,
-      title: "Top Writing Jobs Today",
+      title: "TOP WRITING JOBS TODAY ",
       date: "Jul 22, 2025",
       time: "9:00 AM - 5:00 PM",
       location: "Manhattan Club, New York, NY, USA",
@@ -16,7 +16,7 @@ const HomePage = () => {
     },
     {
       id: 2,
-      title: "valantine day special ",
+      title: "VALANTINE DAY SPECIAL ",
       date: "14 feb , 2025",
       time: "9:00 AM - 6:00 PM",
       location: "Comsats university,Pakistan,Islamabad",
@@ -25,7 +25,7 @@ const HomePage = () => {
     },
     {
       id: 3,
-      title: "Writing Masterclass",
+      title: "WRITING MASTERCLASS",
       date: "Nov 18, 2025",
       time: "10:00 AM - 4:00 PM",
       location: "Manhattan Club, New York, NY, USA",
@@ -43,7 +43,7 @@ const HomePage = () => {
     },
     {
       id: 5,
-      title: "Writers' Guide 2022",
+      title: "WRITER'S GUIDE 2022",
       date: "Aug 19, 2025",
       time: "9:00 AM - 6:00 PM",
       location: "Manhattan Club, New York, NY, USA",
@@ -52,7 +52,7 @@ const HomePage = () => {
     },
     {
       id: 6,
-      title: "Book special ",
+      title: "BOOK SPECIAL ",
       date: "25 feb , 2026",
       time: "9:00 AM - 6:00 PM",
       location: "Comsats university,Pakistan,Islamabad",
@@ -61,7 +61,7 @@ const HomePage = () => {
     },
     {
       id: 7,
-      title: " Day special ",
+      title: "SPECIAL DAY  ",
       date: "23 jun , 2028",
       time: "9:00 AM - 6:00 PM",
       location: "PARK,Pakistan,Islamabad",
@@ -70,7 +70,7 @@ const HomePage = () => {
     },
     {
       id: 8,
-      title: "Holidays ",
+      title: "HOLIDAYS ",
       date: "24 April , 2029",
       time: "9:00 AM - 6:00 PM",
       location: "Sea view,Pakistan,Karachi",
@@ -189,8 +189,8 @@ const HomePage = () => {
         <div className="hero-slide active">
           <div className="hero-overlay"></div>
           <div className="hero-content">
-            <p className="subheading">Extensive Cataloging System</p>
-            <h2>Online Search Tools for Librarians</h2>
+            <p className="subheading">JOIN US </p>
+            <h2>UPCOMMING EVENTS </h2>
             <button className="cta-button">Read More </button>
           </div>
           <img
@@ -202,8 +202,8 @@ const HomePage = () => {
         <div className="hero-slide">
           <div className="hero-overlay"></div>
           <div className="hero-content">
-            <p className="subheading">Advanced Search Features</p>
-            <h2>Find Books Faster and Easier</h2>
+            <p className="subheading">JOIN US</p>
+            <h2>UPCOMMING EVENTS </h2>
             <button className="cta-button">Explore Now </button>
           </div>
           <img
@@ -212,19 +212,7 @@ const HomePage = () => {
             className="hero-image"
           />
         </div>
-        <div className="hero-slide">
-          <div className="hero-overlay"></div>
-          <div className="hero-content">
-            <p className="subheading">Personalized Recommendations</p>
-            <h2>Discover Your Next Favorite Book</h2>
-            <button className="cta-button">Get Started </button>
-          </div>
-          <img
-            src="img3.jpg"
-            alt="Hero Image 3"
-            className="hero-image"
-          />
-        </div>
+        
 
         <button className="slider-btn left-btn">&#10094;</button>
         <button className="slider-btn right-btn">&#10095;</button>
