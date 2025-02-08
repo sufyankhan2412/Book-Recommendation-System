@@ -73,7 +73,159 @@ body {
 .social-icons i:hover {
     color: #007bff;
 }
+/* Dropdown Menu */
+/* General Dropdown Menu */
+.dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black; /* Black background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 200px;
+  }
+  
+  .dropdown-menu li {
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown-menu li a {
+    color: white; /* White text */
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    position: relative;
+  }
+  
+  /* Blue Underline on Hover */
+  .dropdown-menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff; /* Blue underline */
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .dropdown-menu li a:hover::after {
+    transform: scaleX(1); /* Fully visible on hover */
+  }
+  
+  /* Spacing on Hover */
+  .dropdown-menu li:hover {
+    padding-left: 20px; /* Add spacing on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background on hover */
+  }
+  
+  /* Show Dropdown on Hover */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
 
+/* General Dropdown Menu */
+.dropdown-blog {
+  position: relative;
+}
+
+.dropdown-menu-blog {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: black; /* Black background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 600px; /* Wider dropdown to accommodate columns */
+}
+
+/* Dropdown Section Styling for Blog */
+.dropdown-section-blog {
+  padding: 10px 15px;
+}
+
+.dropdown-section-blog span {
+  color: #888; /* Light gray for section titles */
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.dropdown-section-blog ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-section-blog ul li {
+  padding: 5px 0;
+}
+
+.dropdown-section-blog ul li a {
+  color: white; /* White text */
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Blue Underline on Hover */
+.dropdown-section-blog ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff; /* Blue underline */
+  transform: scaleX(0); /* Initially hidden */
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-section-blog ul li a:hover::after {
+  transform: scaleX(1); /* Fully visible on hover */
+}
+
+/* Spacing on Hover */
+.dropdown-section-blog ul li:hover {
+  padding-left: 10px; /* Add spacing on hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Slight background on hover */
+}
+
+/* Blog Styles 1 (Column-Wise Layout) */
+.blog-columns {
+  column-count: 2; /* Display in 3 columns */
+  column-gap: 20px; /* Space between columns */
+}
+
+.blog-columns li {
+  break-inside: avoid; /* Prevent items from breaking across columns */
+}
+
+/* Show Dropdown on Hover */
+.dropdown-blog:hover .dropdown-menu-blog {
+  display: block;
+}
+  
 /* Hero Section */
 .hero-slider {
     display: flex;
@@ -168,6 +320,10 @@ body {
 
 /* Content Section */
 .content-section {
+    font-size: 1em;
+    color: black;
+    margin-bottom: 10px;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -177,6 +333,10 @@ body {
 }
 
 .text-content {
+    font-size: 1.1em;
+    color: #000;
+    line-height: 1.6;
+    margin-bottom: 20px;
     width: 50%;
     text-align: left;
     padding-right: 20px;
@@ -187,7 +347,10 @@ body {
 }
 
 .text-content h2 {
-    font-size: 2.5em;
+    font-size: 1.5em;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 600;
     color: #333;
     margin-bottom: 10px;
 }
