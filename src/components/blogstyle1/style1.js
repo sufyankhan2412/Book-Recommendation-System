@@ -66,16 +66,18 @@ const HomePage = () => {
       <div className="article-content">
         <h1>True factors of a successful scientific project </h1>
         <center> <p>Ashton Porter Apr 21, 2020 0Comments</p></center>
-       
-       
+        <div className="quote-container"></div>
         <p>
+        <span className="dropcap">Q</span>
+        <span className="quote-text">
           Proin faucibus nec mauris a sodales, sed elementum mi tincidunt. Sed eget
           viverra egestas nisi in consequat. Fusce sodales augue a accumsan. Cras
           sollicitudin, ipsum eget blandit pulvinar. Integer tincidunt. Cras dapibus.
           Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo
           ligula, porttitor eu, consequat vitae, eleifend ac, enim.
-        </p>
-        
+        </span>
+      </p>
+       
         <p>
           Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium,
           doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore
