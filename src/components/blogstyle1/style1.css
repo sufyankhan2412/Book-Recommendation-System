@@ -118,7 +118,27 @@ body {
     height: 100%;
     object-fit: cover;
   }
-  
+  .quote-container {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Georgia', serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.dropcap {
+    font-size: 60px;
+    font-weight: bold;
+    float: left;
+    margin-right: 10px;
+    line-height: 1;
+    font-family: 'Times New Roman', serif;
+}
+
+.quote-text {
+    display: inline;
+}
+
   /* Article Content Styles */
   .article-content {
     max-width: 800px;
