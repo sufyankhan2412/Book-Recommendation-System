@@ -59,7 +59,7 @@ const HomePage = () => {
         <div className="hero-slide active">
           <div className="hero-overlay"></div>
           <div className="hero-content"></div>
-          <img src="style1.jpeg" alt="Hero Image" className="hero-image" />
+          <img src="blog6.jpeg" alt="Hero Image" className="hero-image" />
         </div>
       </section>
 
