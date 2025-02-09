@@ -4,12 +4,12 @@ import 'font-awesome/css/font-awesome.min.css';
 // import EventsPage from "./components/Event_page/Event_page";
 //import BlogStyle1 from "./components/blogstyle1/style1"; 
 //import Blogstyle2 from "./components/blogstyle2/blogstyle2";
-//import Bloggallery from "./components/blog_gallery/blog_gallery";
-import ContactsPage from "./components/contacts_page/contacts_page";
+import Bloggallery from "./components/blog_gallery/blog_gallery";
+//import ContactsPage from "./components/contacts_page/contacts_page";
 function App() {
   return (
     <div>
-      <ContactsPage/> 
+      <Bloggallery/> 
     </div>
   );
 }

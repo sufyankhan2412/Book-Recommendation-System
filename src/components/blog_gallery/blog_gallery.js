@@ -282,25 +282,38 @@ const HomePage = () => {
         </p>
         <h1>You May Also Like</h1>
         </div>
-        <section className="hero-slider2">
-  <div className="hero-slide2 active">
-    <img src="blog1.jpg" alt="Hero Image 1" className="hero-image" />
-  </div>
-  <div className="hero-slide2">
-    <img src="blog2.jpg" alt="Hero Image 2" className="hero-image" />
-  </div>
-  <div className="hero-slide2">
-    <img src="blog3.jpg" alt="Hero Image 3" className="hero-image" />
-  </div>
 
-  {/* Small and centered arrow buttons */}
-  <button className="slider-btn left-btn2">&#10094;</button>
-  <button className="slider-btn right-btn2">&#10095;</button>
-</section>
-<div class="reading-container2">
-    <button class="reading-btn2" onclick="goToPage('page1.html')">READING</button>
-    <button class="reading-btn2" onclick="goToPage('page2.html')">READING</button>
+        <div class="container4">
+        
+        <div class="gallery">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQT2k9e7EmuqcVI29N80AoE4nQI3U-x8Ecog&s" alt=""></img>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPsX3_p9s80hH1lFhWTaC_m14RF5RGVO-fag&s" alt="r"></img>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo63MtAjmao7TUWhJEgvKySifsWmrm2wLkEg&s" alt=""></img>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Qf3__cihJDQ76QnipyjguOa7Ik8U7vjBTw&s" alt=""></img>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyz5Klx4hDK9uWAWeIBfIcFRf7729RvEBLig&s" alt="r"></img>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSczhg95EjX1Nc4xR3H9cVDl1BdfSKfIDpBBQ&s" alt=""></img>
+  <p>Photoshoot of the products we stock</p>
 </div>
+        
+<div class="podcast-container">
+  <div class="podcast-image">
+    <img src="blog13.jpg" alt="Podcast Cover"></img>
+  </div>
+  <div class="podcast-info">
+    <p>Modern podcasts for literature lovers</p>
+    
+  </div>
+</div>
+
+    </div>
+   
+    
+
+<div class="reading-container2">
+    <button class="reading-btn2" onclick="goToPage('page1.html')">FORMATS</button>
+    <button class="reading-btn2" onclick="goToPage('page2.html')">FORMATS</button>
+</div>
+
 
       {/* Footer */}
       <footer className="footer">
