@@ -73,6 +73,7 @@ const HomePage = () => {
     heroSlider.addEventListener('mouseleave', () => {
       autoSlideInterval = setInterval(nextSlide, 5000);
     });
+    
 
     return () => {
       // Cleanup event listeners and interval
@@ -80,6 +81,7 @@ const HomePage = () => {
       window.removeEventListener('scroll', handleScroll);
       
     };
+
     
     
   }, []);
