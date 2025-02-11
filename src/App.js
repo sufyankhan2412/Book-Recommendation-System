@@ -7,6 +7,7 @@ import 'font-awesome/css/font-awesome.min.css';
 //import Bloggallery from "./components/blog_gallery/blog_gallery";`
 //import ContactsPage from "./components/contacts_page/contacts_page";
 import AboutPage from "./components/about_page/about_page";
+ 
 function App() {
   return (
     <div>

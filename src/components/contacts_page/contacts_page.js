@@ -127,7 +127,7 @@ const ContactsPage = () => {
     </section>
     
       {/* Contact Details Section */}
-      <section className="contacts-container">
+    <section className="contacts-container">
       <div className="container">
         
         {/* Left - Contact Details */}
