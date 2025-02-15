@@ -260,7 +260,7 @@ const HomePage = () => {
             <div class="book-grid">
                 <div class="book-item">
                     <div class="book-image">
-                        <img src="https://images.unsplash.com/photo-1652571305415-03416a741883?q=80&w=1527&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="So, Anyway..."/>
+                        <img src="book1.jpg" alt="So, Anyway..."/>
                         <div class="icon-container">
                             <button class="icon-btn"><i class="fas fa-heart"></i></button>
                             <button class="icon-btn"><i className="fas fa-shopping-bag"></i></button>
@@ -272,7 +272,7 @@ const HomePage = () => {
                 </div>
                 <div class="book-item">
                     <div class="book-image">
-                        <img src="https://images.unsplash.com/photo-1511108690759-009324a90311?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDUzfHx8ZW58MHx8fHx8" alt="Enough About Me"/>
+                        <img src="book2.jpg" alt="Enough About Me"/>
                         <div class="icon-container">
                             
                             <button class="icon-btn"><i class="fas fa-heart"></i></button>
@@ -285,7 +285,7 @@ const HomePage = () => {
                 </div>
                 <div class="book-item">
                     <div class="book-image">
-                        <img src="https://images.unsplash.com/photo-1610700786096-dc8b2bc53702?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQzfHx8ZW58MHx8fHx8" alt="His Story"/>
+                        <img src="book3.jpg" alt="His Story"/>
                         <div class="icon-container">
                             
                             <button class="icon-btn"><i class="fas fa-heart"></i></button>
@@ -298,7 +298,7 @@ const HomePage = () => {
                 </div>
                 <div class="book-item">
                     <div class="book-image">
-                        <img src="https://images.unsplash.com/photo-1711185896213-83f3f2e20fd5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDM3fHx8ZW58MHx8fHx8" alt="White Teeth"/>
+                        <img src="book4.jpg" alt="White Teeth"/>
                         <div class="icon-container">
                             <button class="icon-btn"><i class="fas fa-heart"></i></button>
                             <button class="icon-btn"><i className="fas fa-shopping-bag"></i></button>
@@ -319,42 +319,42 @@ const HomePage = () => {
         
         <div class="gallery">
             <div class="gallery-item">
-                <img src="photogallery1.jpeg" alt="Category 1"/>
+                <img src="blog1.jpg" alt="Category 1"/>
                 <div class="overlay">
                     <h3>Popular Novels</h3>
                     <p>Literature</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="photogallery2.jpeg" alt="Category 2"/>
+                <img src="blog2.jpg" alt="Category 2"/>
                 <div class="overlay">
                     <h3>Classic Literature</h3>
                     <p>Literature</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="photogallery3.jpeg" alt="Category 3"/>
+                <img src="blog16.jpg" alt="Category 3"/>
                 <div class="overlay">
                     <h3>Fantasy</h3>
                     <p>Literature</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="photogallery4.jpeg" alt="Category 4"/>
+                <img src="blog17.jpg" alt="Category 4"/>
                 <div class="overlay">
                     <h3>Drama & Romance</h3>
                     <p>Literature</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="photogallery5.jpeg" alt="Category 5"/>
+                <img src="blog18.jpg" alt="Category 5"/>
                 <div class="overlay">
                     <h3>Humor</h3>
                     <p>Literature</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="photogallery6.jpeg" alt="Category 6"/>
+                <img src="blog19.jpg" alt="Category 6"/>
                 <div class="overlay">
                     <h3>Poetry & plays</h3>
                     <p>Literature</p>
