@@ -1,89 +1,54 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { useHistory } from "react-router-dom"; // For navigation
-import "./Cart.css";
+import "./Cart.css"; // Make sure you have this CSS file for styling
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([
-    { id: 1, name: "Book 1", price: 15, quantity: 1 },
-    { id: 2, name: "Book 2", price: 20, quantity: 1 },
-  ]);
-  const [paymentMethod, setPaymentMethod] = useState("");
-  const history = useHistory(); // Hook to navigate
+    const [cartItems, setCartItems] = useState([
+        { id: 1, name: "The Kite Runner", price: 44.00, quantity: 1, img: "https://imgv2-2-f.scribdassets.com/img/word_document/250024294/original/582f636f24/1587740851?v=1" },
+        { id: 2, name: "Harry Porter", price: 50.00, quantity: 1, img: "https://th.bing.com/th/id/OIP.qP5WDAHXEBlm1EdKbTlxcAHaLH?rs=1&pid=ImgDetMain" }
+    ]);
 
-  const updateQuantity = (id, amount) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id ? { ...item, quantity: Math.max(1, item.quantity + amount) } : item
-      )
-    );
-  };
+    const updateQuantity = (id, delta) => {
+        setCartItems(cartItems.map(item => 
+            item.id === id ? { ...item, quantity: Math.max(1, item.quantity + delta) } : item
+        ));
+    };
 
-  const removeItem = (id) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
-  };
+    const removeItem = (id) => {
+        setCartItems(cartItems.filter(item => item.id !== id));
+    };
 
-  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    const totalAmount = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  const handleProceedToPayment = () => {
-    if (!paymentMethod) {
-      alert("Please select a payment method.");
-      return;
-    }
-
-    // Navigate based on selected payment method
-    if (paymentMethod === "credit-card") {
-      history.push("/payment/credit-card");
-    } else if (paymentMethod === "paypal") {
-      history.push("/payment/paypal");
-    } else if (paymentMethod === "bank-transfer") {
-      history.push("/payment/bank-transfer");
-    }
-  };
-
-  return (
-    <motion.div
-      className="cart-container"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <h2 className="cart-title">Shopping Cart</h2>
-      <div className="cart-items">
-        {cartItems.map((item) => (
-          <motion.div className="cart-item" key={item.id} whileHover={{ scale: 1.05 }}>
-            <span>{item.name}</span>
-            <span>${item.price}</span>
-            <div className="quantity-controls">
-              <button onClick={() => updateQuantity(item.id, -1)}>-</button>
-              <span>{item.quantity}</span>
-              <button onClick={() => updateQuantity(item.id, 1)}>+</button>
+    return (
+        <div className="cart-container">
+            <div className="cart">
+                <h2>Shopping Cart</h2>
+                {cartItems.length === 0 ? (
+                    <p>Your cart is empty</p>
+                ) : (
+                    cartItems.map(item => (
+                        <div key={item.id} className="cart-item">
+                            <img src={item.img} alt={item.name} className="cart-img" />
+                            <div className="cart-details">
+                                <h4>{item.name}</h4>
+                                <p>€{item.price.toFixed(2)}</p>
+                                <div className="quantity-control">
+                                    <button onClick={() => updateQuantity(item.id, -1)}>-</button>
+                                    <span>{item.quantity}</span>
+                                    <button onClick={() => updateQuantity(item.id, 1)}>+</button>
+                                </div>
+                            </div>
+                            <span className="remove" onClick={() => removeItem(item.id)}>&times;</span>
+                        </div>
+                    ))
+                )}
+                <div className="cart-summary">
+                    <h4>Total: €{totalAmount.toFixed(2)}</h4>
+                    <button className="checkout-btn">Checkout</button>
+                </div>
             </div>
-            <button className="remove-btn" onClick={() => removeItem(item.id)}>
-              Remove
-            </button>
-          </motion.div>
-        ))}
-      </div>
-      <h3>Total: ${totalPrice}</h3>
-      <div className="payment-section">
-        <h4>Select Payment Method</h4>
-        <select onChange={(e) => setPaymentMethod(e.target.value)}>
-          <option value="">Choose...</option>
-          <option value="credit-card">Credit Card</option>
-          <option value="paypal">PayPal</option>
-          <option value="bank-transfer">Bank Transfer</option>
-        </select>
-      </div>
-      <motion.button
-        className="checkout-btn"
-        whileTap={{ scale: 0.9 }}
-        onClick={handleProceedToPayment}
-      >
-        Proceed to Payment
-      </motion.button>
-    </motion.div>
-  );
+        </div>
+    );
 };
 
 export default Cart;
