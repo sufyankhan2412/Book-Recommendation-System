@@ -1,0 +1,664 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* Sticky Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px; /* Initial padding */
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+/* Shrunk Navbar */
+.navbar.shrink {
+    padding: 10px 50px; /* Reduced padding */
+}
+
+.navbar.shrink .logo {
+    font-size: 20px; /* Smaller logo */
+}
+
+.navbar.shrink .nav-links li a {
+    font-size: 14px; /* Smaller font size for links */
+}
+
+.navbar.shrink .social-icons i {
+    font-size: 16px; /* Smaller social icons */
+}
+
+.logo {
+    color: #000;
+    font-size: 24px; /* Initial logo size */
+    font-weight: bold;
+    transition: font-size 0.3s ease; /* Smooth transition for logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 16px; /* Initial font size for links */
+    transition: color 0.3s, font-size 0.3s ease; /* Smooth transition for links */
+}
+
+.nav-links li a:hover {
+    color: #007bff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons i {
+    font-size: 18px; /* Initial social icons size */
+    cursor: pointer;
+    transition: color 0.3s, font-size 0.3s ease; /* Smooth transition for icons */
+}
+
+.social-icons i:hover {
+    color: #007bff;
+}
+/* Dropdown Menu */
+/* General Dropdown Menu */
+.dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black; /* Black background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 200px;
+  }
+  
+  .dropdown-menu li {
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown-menu li a {
+    color: white; /* White text */
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    position: relative;
+  }
+  
+  /* Blue Underline on Hover */
+  .dropdown-menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff; /* Blue underline */
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .dropdown-menu li a:hover::after {
+    transform: scaleX(1); /* Fully visible on hover */
+  }
+  
+  /* Spacing on Hover */
+  .dropdown-menu li:hover {
+    padding-left: 20px; /* Add spacing on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background on hover */
+  }
+  
+  /* Show Dropdown on Hover */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+/* General Dropdown Menu */
+.dropdown-blog {
+  position: relative;
+}
+
+.dropdown-menu-blog {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: black; /* Black background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 600px; /* Wider dropdown to accommodate columns */
+}
+
+/* Dropdown Section Styling for Blog */
+.dropdown-section-blog {
+  padding: 10px 15px;
+}
+
+.dropdown-section-blog span {
+  color: #888; /* Light gray for section titles */
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.dropdown-section-blog ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-section-blog ul li {
+  padding: 5px 0;
+}
+
+.dropdown-section-blog ul li a {
+  color: white; /* White text */
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Blue Underline on Hover */
+.dropdown-section-blog ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff; /* Blue underline */
+  transform: scaleX(0); /* Initially hidden */
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-section-blog ul li a:hover::after {
+  transform: scaleX(1); /* Fully visible on hover */
+}
+
+/* Spacing on Hover */
+.dropdown-section-blog ul li:hover {
+  padding-left: 10px; /* Add spacing on hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Slight background on hover */
+}
+
+/* Blog Styles 1 (Column-Wise Layout) */
+.blog-columns {
+  column-count: 2; /* Display in 3 columns */
+  column-gap: 20px; /* Space between columns */
+}
+
+.blog-columns li {
+  break-inside: avoid; /* Prevent items from breaking across columns */
+}
+
+/* Show Dropdown on Hover */
+.dropdown-blog:hover .dropdown-menu-blog {
+  display: block;
+}
+  
+/* Hero Section */
+.hero-slider {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    color: white;
+    z-index: 2;
+    text-align: center;
+}
+
+.subheading {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
+
+.slider-btn:hover {
+    background: white;
+}
+
+/* Content Section */
+.content-section {
+    font-size: 1em;
+    color: black;
+    margin-bottom: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-content {
+    font-size: 1.1em;
+    color: #000;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    width: 50%;
+    text-align: left;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.text-content h2 {
+    font-size: 1.5em;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.text-content h3 {
+    font-size: 1.5em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 1.1em;
+    color: #000;
+    line-height: 1.6;
+}
+
+.media-content {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.media-content img, .media-content video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.sample-image img {
+    width: 450px; /* Set image width */
+    height: 550px; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow */
+}
+
+
+/* Shop Section */
+.shop-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+.shop h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.book-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.book-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 200px;
+}
+.book-image {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.book-image img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+.book-image:hover img {
+    transform: scale(1.1);
+}
+.icon-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    align-items: center;
+}
+.book-image:hover .icon-container {
+    opacity: 1;
+}
+.icon-btn {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    padding: 8px;
+    border-radius: 50%;
+}
+.icon-btn:hover {
+    color: red;
+}
+
+/* Offer Section */
+.offer-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.offer-section h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.offer-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.overlay p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Newsletter Signup Section */
+.newsletter {
+    background: #111;  /* Black background */
+    color: white;
+    text-align: center;
+    padding: 100px 40px; /* Increased padding */
+}
+
+.newsletter h3 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 18px; /* Increased size */
+    margin-bottom: 15px;
+}
+
+.newsletter h2 {
+    font-size: 36px; /* Increased size */
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 20px;
+}
+
+.newsletter-form input {
+    width: 400px; /* Wider input */
+    padding: 20px; /* Increased padding */
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.newsletter-form button {
+    background: gold;
+    border: none;
+    padding: 16px 24px; /* Bigger button */
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    font-size: 20px;
+}
+
+.newsletter .checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px; /* Bigger text */
+}
+
+.newsletter .checkbox a {
+    color: gold;
+    text-decoration: none;
+}
+
+/* Footer Section */
+.footer {
+    background: white;  /* White background */
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 70px; /* Increased height & padding */
+    font-size: 18px;
+}
+
+.footer-left {
+    font-size: 15px;
+    text-align: left;
+    flex: 1;
+}
+
+/* Center section for "Readify" */
+.footer-center {
+    flex: 1;
+    text-align: center;
+}
+
+.brand-name {
+    font-size: 30px; /* Bigger Readify */
+    font-weight: bold;
+    color: black;
+}
+
+/* Right Section for Icons */
+.footer-icons {
+    display: flex;
+    gap: 30px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.footer-icons a {
+    color: black;
+    font-size: 30px;  /* Bigger icons */
+    transition: color 0.3s;
+}
+
+.footer-icons a:hover {
+    color: gold;
+}
+ 
+
+/* Style for Scroll to Top Button */
+#scrollToTopBtn {
+    display: none; /* Initially hidden */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  #scrollToTopBtn.show {
+    display: block; /* Show button when scrolling down */
+  }
+  
+  #scrollToTopBtn:hover {
+    background-color: #555;
+  }
+  
