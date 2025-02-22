@@ -13,10 +13,11 @@
     "react-dom": "^18.2.0",
     "react-icons": "^5.4.0",
     "react-router-dom": "^7.1.5",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "^3.0.1",
     "react-stripe-checkout": "^2.6.3",
-    "web-vitals": "^4.2.4",
-    "webpack": "^5.97.1"
+    "serialize-javascript": "^6.0.2",
+    "svgo": "^3.0.2",
+    "web-vitals": "^4.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
