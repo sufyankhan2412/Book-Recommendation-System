@@ -1,11 +1,7 @@
 import React from "react";
-import "../components/Payment.css";
-import { useLocation } from "react-router-dom";
+import "./Payment.css"; // Correct import path
 
-const Payment = () => {
-  const location = useLocation();
-  const { totalAmount, products } = location.state || { totalAmount: 0, products: [] };
-
+const Payment = ({ products, totalAmount }) => {
   return (
     <main className="page payment-page">
       <section className="payment-form dark">
@@ -24,7 +20,9 @@ const Payment = () => {
                   <p className="item-description">{product.description}</p>
                 </div>
               ))}
-              <div className="total">Total<span className="price">${totalAmount}</span></div>
+              <div className="total">
+                Total<span className="price">${totalAmount}</span>
+              </div>
             </div>
             <div className="card-details">
               <h3 className="title">Credit Card Details</h3>
@@ -50,7 +48,9 @@ const Payment = () => {
                   <input type="text" className="form-control" placeholder="CVC" />
                 </div>
                 <div className="form-group col-sm-12">
-                  <button type="button" className="btn btn-primary btn-block">Proceed</button>
+                  <button type="button" className="btn btn-primary btn-block">
+                    Proceed
+                  </button>
                 </div>
               </div>
             </div>
