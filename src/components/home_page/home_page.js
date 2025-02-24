@@ -5,7 +5,6 @@ const HomePage = () => {
   useEffect(() => {
     // Shrink Navbar on Scroll
     const navbar = document.querySelector('.navbar');
-    const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
     const slides = document.querySelectorAll('.hero-slide');
     const leftBtn = document.querySelector('.left-btn');
     const rightBtn = document.querySelector('.right-btn');
@@ -18,15 +17,6 @@ const HomePage = () => {
       } else {
         navbar.classList.remove('shrink');
       }
-
-      // Show/hide Scroll to Top button
-      if (scrollToTopBtn) {
-        if (window.scrollY > 300) {
-          scrollToTopBtn.classList.add('show');
-        } else {
-          scrollToTopBtn.classList.remove('show');
-        }
-      }
     };
     
     // Slider functionality
@@ -36,7 +26,6 @@ const HomePage = () => {
       });
       slides[index].classList.add('active');
     };
-
     const nextSlide = () => {
       currentSlide++;
       if (currentSlide >= slides.length) {
@@ -44,7 +33,6 @@ const HomePage = () => {
       }
       showSlide(currentSlide);
     };
-
     const prevSlide = () => {
       currentSlide--;
       if (currentSlide < 0) {
@@ -87,14 +75,7 @@ const HomePage = () => {
       <nav className="navbar">
         <h1 className="logo">READIFY</h1>
         <ul className="nav-links">
-          <li className="dropdown">
-            <a href="#">Home</a>
-            <ul className="dropdown-menu">
-              <li><a href="#">Home 1</a></li>
-              <li><a href="#">Home 2</a></li>
-              <li><a href="#">Home 3</a></li>
-            </ul>
-          </li>
+          <li className="dropdown"><a href="#">Home</a></li>
           <li className="dropdown">
             <a href="#">Pages</a>
             <ul className="dropdown-menu">
@@ -158,7 +139,7 @@ const HomePage = () => {
               <li><a href="#">Store 3</a></li>
             </ul>
           </li>
-          <li><a href="#">Contacts</a></li>
+          <li><a href="C:\Users\JOY Unicorn User\Desktop\project\Book-Recommendation-System\src\components\contacts_page\contacts_page.js">Contacts</a></li>
         </ul>
         <div className="social-icons">
           <i className="fab fa-facebook"></i>
@@ -180,7 +161,7 @@ const HomePage = () => {
             <button className="cta-button">Read More </button>
           </div>
           <img
-            src="img1.jpg"
+            src="img2.jpg"
             alt="Hero Image 1"
             className="hero-image"
           />
@@ -193,7 +174,7 @@ const HomePage = () => {
             <button className="cta-button">Explore Now </button>
           </div>
           <img
-            src="img2.jpg"
+            src="slider5.jpg"
             alt="Hero Image 2"
             className="hero-image"
           />
@@ -206,7 +187,7 @@ const HomePage = () => {
             <button className="cta-button">Get Started </button>
           </div>
           <img
-            src="img3.jpg"
+            src="books.jpg"
             alt="Hero Image 3"
             className="hero-image"
           />
@@ -216,63 +197,70 @@ const HomePage = () => {
         <button className="slider-btn right-btn">&#10095;</button>
       </section>
 
-      {/* New section */}
-      <section className="content-section">
-        <div className="text-content">
-          <h2>Our Creative Vision</h2>
-          <h3>Inspiring Through Stories</h3>
-          <p>
-            At Bancic Green, we believe in the power of storytelling to
-            transform lives. Our collection of books spans genres and cultures,
-            offering something for every reader. Join us on a journey of
-            discovery and inspiration.
-          </p>
-          <button className="cta-button">About us </button>
-        </div>
+      {/* content section */}
+      <section className="creative-vision">
+      <div className="text-content">
+        <h4>CREATIVE VISION</h4>
+        <h2>We Collect & Publish Books</h2>
+        <p>
+          Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur 
+          aut odit aut fugit sed quia.
+        </p>
+        <button className="cta-button">About Us</button>
+      </div>
 
-        <div className="media-content">
-          <div className="sample-image">
-            <img
-              src="libraryimage.jpeg"
-              alt="Sample Image"
-            />
-          </div>
-         
-      {/*  <div className="sample-video">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/pGkPOcnEuSE"
-              frameBorder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-          */}
+      <div className="media-content">
+        {/* Background Image */}
+        <img src="library.jpeg" alt="Bookshelf" className="background-image" />
+
+        {/* Foreground Image + Play Button */}
+        <div className="video-wrapper">
+          <img src="blog19.jpg" alt="Library" className="thumbnail" />
+          <a
+            href="https://player.vimeo.com/video/444825944?h=74d9b29d04"
+            className="play-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ▶
+          </a>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Shop Section */}
       <section class="shop-section">
-        <div class="shop">
+          <div class="shop">
             <h4>OUR SHOP</h4>
             <h2>Read These Books & Start a New Life</h2>
             <div class="book-grid">
                 <div class="book-item">
+                  <div class="book-image">
+                      <img src="book9.jpg" alt="So, Anyway..."/>
+                      <div class="icon-container">
+                          <button class="icon-btn"><i class="fas fa-heart"></i></button>
+                          <button class="icon-btn"><i className="fas fa-shopping-bag"></i></button>
+                          <button class="icon-btn"><i class="fas fa-arrow-right"></i></button>
+                      </div>
+                  </div>
+                  <h3>The Kite Runner</h3>
+                  <p>KHALED HOSSEINI</p>
+                </div>
+                <div class="book-item">
                     <div class="book-image">
-                        <img src="book1.jpg" alt="So, Anyway..."/>
+                        <img src="book8.jpg" alt="Enough About Me"/>
                         <div class="icon-container">
                             <button class="icon-btn"><i class="fas fa-heart"></i></button>
                             <button class="icon-btn"><i className="fas fa-shopping-bag"></i></button>
                             <button class="icon-btn"><i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
-                    <h3>So, Anyway...</h3>
-                    <p>Burt Geller</p>
+                    <h3>IKIGAI</h3>
+                    <p>HECTOR GRACIA</p>
                 </div>
                 <div class="book-item">
                     <div class="book-image">
-                        <img src="book2.jpg" alt="Enough About Me"/>
+                        <img src="book6.jpg" alt="His Story"/>
                         <div class="icon-container">
                             
                             <button class="icon-btn"><i class="fas fa-heart"></i></button>
@@ -280,88 +268,123 @@ const HomePage = () => {
                             <button class="icon-btn"><i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
-                    <h3>Enough About Me</h3>
-                    <p>Richard Mann</p>
+                    <h3>The Forty Rules of Love</h3>
+                    <p>ELIF SHAFAK</p>
                 </div>
                 <div class="book-item">
                     <div class="book-image">
-                        <img src="book3.jpg" alt="His Story"/>
-                        <div class="icon-container">
-                            
-                            <button class="icon-btn"><i class="fas fa-heart"></i></button>
-                            <button class="icon-btn"><i className="fas fa-shopping-bag"></i></button>
-                            <button class="icon-btn"><i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                    <h3>His Story</h3>
-                    <p>Karen Perry</p>
-                </div>
-                <div class="book-item">
-                    <div class="book-image">
-                        <img src="book4.jpg" alt="White Teeth"/>
+                        <img src="book7.jpg" alt="White Teeth"/>
                         <div class="icon-container">
                             <button class="icon-btn"><i class="fas fa-heart"></i></button>
                             <button class="icon-btn"><i className="fas fa-shopping-bag"></i></button>
                             <button class="icon-btn"><i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
-                    <h3>White Teeth</h3>
-                    <p>Drew Barrymore</p>
+                    <h3>Think and Grow Rich</h3>
+                    <p>NAPOLEON HILL</p>
                 </div>
             </div>
             <button class="cta-button">View More Books</button>
-        </div>
-    </section>
+          </div>
+      </section>
 
-    <section class="offer-section">
-        <h4>What We Offer</h4>
-        <h2>Photo Gallery</h2>
-        
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="blog1.jpg" alt="Category 1"/>
-                <div class="overlay">
-                    <h3>Popular Novels</h3>
-                    <p>Literature</p>
-                </div>
+      {/* Blog Section */}
+      <section className="blog-updates">
+        <h3 className="section-subtitle">WHAT'S NEW</h3>
+        <h2 className="section-title">Blog Updates</h2>
+
+        <div className="blog-container">
+          {/* Left Side: Image with Text Below */}
+          <div className="blog-main">
+            <img
+              src="blog17.jpg"
+              alt="Book on Beach"
+              className="blog-main-image"
+              onclick="window.location.href='newScreen.html'" /* Redirect to new screen */
+            />
+            <span className="blog-label">UPDATES</span>
+            <p className="image-text" onclick="window.location.href='newScreen.html'"> WHAT DO YOU NEED FOR A CALM AND RELAXING VACATION </p>
+            <p>Growing in excellence, but undergoing hardship and pain at work. For even the least effort is acceptable</p>
+          </div>
+
+          {/* Right Side: Blog Entries */}
+          <div className="blog-list">
+            <div className="blog-item">
+              <img src="home-blog.jpeg" alt="Blog 1" className="blog-thumbnail" />
+              <div className="blog-content">
+                <span className="blog-category">UPDATES • Mar 13, 2020</span>
+                <h3 className="blog-title">Start your day properly with the hottest novelties</h3>
+              </div>
             </div>
-            <div class="gallery-item">
-                <img src="blog2.jpg" alt="Category 2"/>
-                <div class="overlay">
-                    <h3>Classic Literature</h3>
-                    <p>Literature</p>
-                </div>
+
+            <div className="blog-item">
+              <img src="home-blog4.jpeg" alt="Blog 2" className="blog-thumbnail" />
+              <div className="blog-content">
+                <span className="blog-category">UPDATES • Mar 13, 2020</span>
+                <h3 className="blog-title">Who is your favorite science fiction author?</h3>
+              </div>
             </div>
-            <div class="gallery-item">
-                <img src="blog16.jpg" alt="Category 3"/>
-                <div class="overlay">
-                    <h3>Fantasy</h3>
-                    <p>Literature</p>
-                </div>
+            <div className="blog-item">
+              <img src="home-blog2.jpeg" alt="Blog 2" className="blog-thumbnail" />
+              <div className="blog-content">
+                <span className="blog-category">UPDATES • Mar 13, 2020</span>
+                <h3 className="blog-title">Who is your favorite science fiction author?</h3>
+              </div>
             </div>
-            <div class="gallery-item">
-                <img src="blog17.jpg" alt="Category 4"/>
-                <div class="overlay">
-                    <h3>Drama & Romance</h3>
-                    <p>Literature</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="blog18.jpg" alt="Category 5"/>
-                <div class="overlay">
-                    <h3>Humor</h3>
-                    <p>Literature</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="blog19.jpg" alt="Category 6"/>
-                <div class="overlay">
-                    <h3>Poetry & plays</h3>
-                    <p>Literature</p>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+      </section>
+
+    
+      <section class="offer-section">
+          <h4>What We Offer</h4>
+          <h2>Photo Gallery</h2>
+          
+          <div class="gallery">
+              <div class="gallery-item">
+                  <img src="blog1.jpg" alt="Category 1"/>
+                  <div class="overlay">
+                      <h3>Popular Novels</h3>
+                      <p>Literature</p>
+                  </div>
+              </div>
+              <div class="gallery-item">
+                  <img src="blog2.jpg" alt="Category 2"/>
+                  <div class="overlay">
+                      <h3>Classic Literature</h3>
+                      <p>Literature</p>
+                  </div>
+              </div>
+              <div class="gallery-item">
+                  <img src="blog16.jpg" alt="Category 3"/>
+                  <div class="overlay">
+                      <h3>Fantasy</h3>
+                      <p>Literature</p>
+                  </div>
+              </div>
+              <div class="gallery-item">
+                  <img src="blog17.jpg" alt="Category 4"/>
+                  <div class="overlay">
+                      <h3>Drama & Romance</h3>
+                      <p>Literature</p>
+                  </div>
+              </div>
+              <div class="gallery-item">
+                  <img src="blog18.jpg" alt="Category 5"/>
+                  <div class="overlay">
+                      <h3>Humor</h3>
+                      <p>Literature</p>
+                  </div>
+              </div>
+              <div class="gallery-item">
+                  <img src="blog19.jpg" alt="Category 6"/>
+                  <div class="overlay">
+                      <h3>Poetry & plays</h3>
+                      <p>Literature</p>
+                  </div>
+              </div>
+          </div>
+      </section>
 
     {/* News Letter */}
     <section className="newsletter">
